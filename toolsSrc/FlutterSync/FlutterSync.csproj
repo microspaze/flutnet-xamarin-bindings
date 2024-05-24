@@ -6,10 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommandLineParser" Version="2.8.0" />
-    <PackageReference Include="MedallionShell" Version="1.6.1" />
-    <PackageReference Include="SharpYaml" Version="1.6.6" />
-    <PackageReference Include="SharpZipLib" Version="1.2.0" />
+    <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    <PackageReference Include="MedallionShell" Version="1.6.2" />
+    <PackageReference Include="SharpYaml" Version="2.1.1" />
+    <PackageReference Include="SharpZipLib" Version="1.4.2" />
   </ItemGroup>
 
 </Project>
