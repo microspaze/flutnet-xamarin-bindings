@@ -14,7 +14,7 @@ namespace FlutterSync
         {
             // NOTE: We suppose that the program executable is located under <repository root>/tools
             //       while the native references will be stored under <repository root>/assets/xamarin-native-references
-            DefaultTargetDirectory = "../assets/xamarin-native-references";
+            DefaultTargetDirectory = Path.GetFullPath("../assets/xamarin-native-references");
             DefaultGradleCacheDirectory = OperatingSystem.IsMacOS() 
                     ? Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), ".gradle", "caches", "modules-2", "files-2.1", "io.flutter") 
                     : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".gradle", "caches", "modules-2", "files-2.1", "io.flutter");

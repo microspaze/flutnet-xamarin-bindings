@@ -4,7 +4,7 @@ namespace FlutterSync
 {
     public class Options
     {
-        [Option(nameof(TargetDirectory), Required = true, HelpText = "Path to the folder where Flutter engine's archives and frameworks will be stored.")]
+        [Option(nameof(TargetDirectory), Required = false, HelpText = "Path to the folder where Flutter engine's archives and frameworks will be stored.")]
         public string TargetDirectory { get; set; }
 
         [Option(nameof(NoAndroid), Required = false, HelpText = "Prevents synchronizing Android archives.")]
