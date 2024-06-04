@@ -58,9 +58,6 @@
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Flutnet.Interop">
-      <HintPath>..\..\src\Flutnet.Interop.Android\bin\Debug\Flutnet.Interop.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -118,6 +115,10 @@
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.1.0.5" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Flutnet.Interop.Android\Flutnet.Interop.Android.csproj">
+      <Project>{ff7f682c-3813-4a38-9b08-1a5def1ee88a}</Project>
+      <Name>Flutnet.Interop.Android</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Flutnet.ModuleInterop.Android\Flutnet.ModuleInterop.Android.csproj">
       <Project>{9116C1C4-0C4E-45B5-807B-172A519AE0D3}</Project>
       <Name>Flutnet.ModuleInterop.Android</Name>
