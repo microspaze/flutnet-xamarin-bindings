@@ -46,10 +46,10 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignKey>Apple Development: Manuel Bassanini (78TSEG2GK9)</CodesignKey>
+    <CodesignKey>Apple Development: Jie Fang (T458U3VRWM)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchLink>SdkOnly</MtouchLink>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <CodesignProvision>iOS Team Provisioning Profile: com.i7chi.*</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -71,7 +71,6 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Flutnet.Interop.iOS" Version="2.0.5" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +172,11 @@
       <SmartLink>False</SmartLink>
     </NativeReference>
     -->
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Flutnet.Interop.iOS\Flutnet.Interop.iOS.csproj">
+      <Name>Flutnet.Interop.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" Condition="Exists('$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets')" />
 </Project>
