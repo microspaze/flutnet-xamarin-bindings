@@ -62,16 +62,16 @@
     <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)' != 'Release' ">
-    <NativeReference Include="..\..\assets\xamarin-native-references\iOS\debug\Flutter.xcframework">
+    <!--<NativeReference Include="..\..\assets\xamarin-native-references\iOS\debug\Flutter.xcframework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
-    </NativeReference>
+    </NativeReference>-->
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)' == 'Release' ">
-    <NativeReference Include="..\..\assets\xamarin-native-references\iOS\release\Flutter.xcframework">
+    <!--<NativeReference Include="..\..\assets\xamarin-native-references\iOS\release\Flutter.xcframework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
-    </NativeReference>
+    </NativeReference>-->
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
 </Project>
