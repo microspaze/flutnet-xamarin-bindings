@@ -9,15 +9,15 @@ namespace FlutterSync
     {
         static readonly string DefaultTargetDirectory;
         static readonly string DefaultGradleCacheDirectory;
+        static readonly string DefaultGradleCacheBackupDirectory;
 
         static FlutterSync()
         {
             // NOTE: We suppose that the program executable is located under <repository root>/tools
             //       while the native references will be stored under <repository root>/assets/xamarin-native-references
             DefaultTargetDirectory = Path.GetFullPath("../assets/xamarin-native-references");
-            DefaultGradleCacheDirectory = OperatingSystem.IsMacOS() 
-                    ? Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), ".gradle", "caches", "modules-2", "files-2.1", "io.flutter") 
-                    : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".gradle", "caches", "modules-2", "files-2.1", "io.flutter");
+            DefaultGradleCacheDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), ".gradle", "caches", "modules-2", "files-2.1", "io.flutter");
+            DefaultGradleCacheBackupDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".gradle", "caches", "modules-2", "files-2.1", "io.flutter");
         }
 
         public static int Go(Options options)
@@ -77,6 +77,10 @@ namespace FlutterSync
                     Console.WriteLine("Copying Android archives into destination folder...");
 
                     Directory.CreateDirectory(tmpTargetAndroidOfficial);
+                    if (!Directory.Exists(gradleCacheFolder) && Directory.Exists(DefaultGradleCacheBackupDirectory))
+                    {
+                        gradleCacheFolder = DefaultGradleCacheBackupDirectory;
+                    }
                     DirectoryInfo gradleCacheDir = new DirectoryInfo(gradleCacheFolder);
                     foreach (var gradleCacheArchDir in gradleCacheDir.EnumerateDirectories()
                         .Where(di => !di.Name.Contains("profile", StringComparison.OrdinalIgnoreCase)))
